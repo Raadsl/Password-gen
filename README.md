@@ -1,2 +1,2 @@
-# plagiarism-checker
-Checks text for plagiarism
+# Password generator
+Password generator using Tkinter
