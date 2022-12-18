@@ -2,7 +2,7 @@ import random
 import string
 import tkinter as tk
 
-def generate_password(length, num_special_chars):
+def generate_password(length=16, num_special_chars=5):
   password = ""
   # Generate a random password of the given length
   for i in range(length):
