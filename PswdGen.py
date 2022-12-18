@@ -2,7 +2,7 @@ import random
 import string
 import tkinter as tk
 
-def generate_password(length=16, num_special_chars=5):
+def generate_password(length, num_special_chars):
   password = ""
   # Generate a random password of the given length
   for i in range(length):
@@ -16,6 +16,9 @@ def generate_password(length=16, num_special_chars=5):
 # Create the main window
 window = tk.Tk()
 window.title("Password Generator")
+
+window.iconbitmap('lock.ico')
+
 
 # Create the length label and entry
 length_label = tk.Label(text="Length of password:")
@@ -31,8 +34,15 @@ special_chars_entry.pack()
 
 # Create the generate button and password label
 def generate_button_clicked():
-  length = int(length_entry.get())
-  num_special_chars = int(special_chars_entry.get())
+  try:
+    length = int(length_entry.get())
+  except:
+    length = 16
+  try:
+    num_special_chars = int(special_chars_entry.get())
+  except:
+    num_special_chars = 6
+
   password = generate_password(length, num_special_chars)
   password_label.config(text=password)
 
